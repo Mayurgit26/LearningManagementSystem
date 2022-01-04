@@ -29,7 +29,7 @@ public class Bookmark {
 	@FindBy(xpath="//h2[contains(text(),'My bookmarks')]")
 	WebElement seeBookmarks;
 	
-	@FindBy(xpath="//a[contains(text(),'HCL TSS: Edit profile')]")
+	@FindBy(xpath="//a[contains(text(),'HCL TSS: User Bookmarks block')]")
 	WebElement clickURL;
 	
 	public void clicklogo() {
