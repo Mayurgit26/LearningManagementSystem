@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.TC_ChangePassword_001">
+      <class name="testCases.TC_Login">
         <methods>
-          <include name="tearDownAfterClass"/>
           <include name="setup"/>
+          <include name="tearDownAfterClass"/>
           <include name="tearDown"/>
-          <include name="changePassword_TC_02"/>
+          <include name="login_TC"/>
           <include name="beforeMethod"/>
         </methods>
-      </class> <!-- testCases.TC_ChangePassword_001 -->
+      </class> <!-- testCases.TC_Login -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

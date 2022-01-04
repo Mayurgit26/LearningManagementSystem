@@ -28,7 +28,7 @@ public class TC_Feedback extends BaseClass{
 	
 	@Test
 	public void feedback_TC_01() throws InterruptedException {
-		test = report.createTest("Feedback Test Case 1");
+		test = report.createTest("Feedback_TC_01");
 		
 		LoginPage lp=new LoginPage(driver);
 		lp.enterName(username);
@@ -58,7 +58,7 @@ public class TC_Feedback extends BaseClass{
 	
 	@Test
 	public void feedback_TC_02() throws InterruptedException {
-		test = report.createTest("Feedback Test Case 2");
+		test = report.createTest("Feedback_TC_02");
 
 		Feedback fd=new Feedback(driver);
 		driver.navigate().refresh();
@@ -85,6 +85,7 @@ public class TC_Feedback extends BaseClass{
 			reporter.config().setTheme(Theme.DARK);
 			reporter.config().setDocumentTitle("SampleReport");
 			reporter.config().setReportName("Feedback Module Report");
+			reporter.setAppendExisting(true);
 			report = new ExtentReports();
 			report.attachReporter(reporter);
 		}

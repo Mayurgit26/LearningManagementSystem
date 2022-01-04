@@ -33,7 +33,7 @@ public class TC_Login extends BaseClass {
 
 	for(int i=1;i<ExcelUtils.getRowCount();i++)
 	{
-		test = report.createTest("Login Test Case "+ i);
+		test = report.createTest("Login_TC_0"+ i);
 		lp.enterName(ExcelUtils.getCellData(i, 0));
 		lp.enterPassword(ExcelUtils.getCellData(i, 1));
 		lp.clickLogin();
@@ -53,37 +53,11 @@ public class TC_Login extends BaseClass {
 	String actualResult=ExcelUtils.getCellData(i, 3);
 	String expectedResult=ExcelUtils.getCellData(i, 2);
 	soft.assertEquals(actualResult, expectedResult);
-//	test.log(Status.PASS, "Test Case passed as per expected result");
 	
 	}
 	    soft.assertAll();
 	}
-	
-//	@Test(priority=2,enabled=true)
-//	public void login_TC_002() {
-//		
-//    SoftAssert soft=new SoftAssert();	
-//	LoginPage lp=new LoginPage(driver);
-//	
-//	test = report.createTest("Login Test Case ");
-//	lp.enterName(username);
-//	lp.enterPassword(password);
-//	lp.clickLogin();
-//	String txtWelcome=lp.checkWelcomeMsg();
-//	System.out.println(txtWelcome);
-//	
-//	if(txtWelcome.equalsIgnoreCase("Hello ! Mona")) {
-//		soft.assertTrue(true);	
-//		test.log(Status.PASS, "Test Case passed as per expected result");
-//	}
-//	else
-//	{
-//		soft.assertTrue(false);	
-//		test.log(Status.FAIL, "Test Case failed as per expected result");
-//	}
-//	    soft.assertAll();
-//	}
-	
+		
 	@BeforeMethod
 	public void beforeMethod() {
 		reporter = new ExtentHtmlReporter("./test-output/Login.html");

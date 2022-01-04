@@ -26,7 +26,7 @@ public class TC_ChangePassword extends BaseClass {
 	public static ExtentTest test;
 	
 	@Test
-	public void changePassword_TC_02() throws Exception {
+	public void changePassword_TC() throws Exception {
 		ExcelUtils.setExcelFile(Constant.filename, "Change Password");
 //		test = report.createTest("Change Password Test Case ");
 		SoftAssert soft=new SoftAssert();	
@@ -45,7 +45,7 @@ public class TC_ChangePassword extends BaseClass {
 
 for(int i=1;i<ExcelUtils.getRowCount();i++)
 {
-	test = report.createTest("Change Password Test Case "+ i);
+	test = report.createTest("Change_Password_TC_0"+ i);
 	cp.enterCurrentPassword(ExcelUtils.getCellData(i, 0));
 	cp.enterNewPassword(ExcelUtils.getCellData(i, 1));
 	cp.ReNewPassword(ExcelUtils.getCellData(i, 2));

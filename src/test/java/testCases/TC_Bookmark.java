@@ -31,7 +31,7 @@ public class TC_Bookmark extends BaseClass{
   @Test
   public void bookmark_TC_01() {
 	  
-	    test = report.createTest("Bookmark Test Case 1");
+	    test = report.createTest("Bookmark_TC_01");
 		
 		LoginPage lp=new LoginPage(driver);
 		lp.enterName(username);
@@ -56,7 +56,7 @@ public class TC_Bookmark extends BaseClass{
   
   @Test
   public void bookmark_TC_02() {
-	    test = report.createTest("Bookmark Test Case 2");
+	    test = report.createTest("Bookmark_TC_2");
 	  
 	    Bookmark bm=new Bookmark(driver);
 		

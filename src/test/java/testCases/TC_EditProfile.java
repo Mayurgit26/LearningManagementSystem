@@ -21,11 +21,13 @@ public class TC_EditProfile extends BaseClass{
 	public static ExtentReports report;
 	public static ExtentTest test;
 	
+	SoftAssert soft=new SoftAssert();	
+	
 	@Test
 	public void editProfile_TC_01() {
 		
-		test = report.createTest("Edit Profile Test Case 1");
-		SoftAssert soft=new SoftAssert();	
+		test = report.createTest("Edit_Profile TC_1");
+
 		LoginPage lp=new LoginPage(driver);
 		lp.enterName(username);
 		lp.enterPassword(password);
@@ -55,8 +57,8 @@ public class TC_EditProfile extends BaseClass{
 	@Test
 	public void editProfile_TC_02() {
 		
-		test = report.createTest("Edit Profile Test Case 2");
-		SoftAssert soft=new SoftAssert();	
+		test = report.createTest("Edit_Profile_TC_2");
+		
 		
 		EditProfile ep=new EditProfile(driver);
 		ep.clickEditProfile();
@@ -83,6 +85,7 @@ public class TC_EditProfile extends BaseClass{
 			reporter.config().setTheme(Theme.DARK);
 			reporter.config().setDocumentTitle("SampleReport");
 			reporter.config().setReportName("Edit Profile Module Report");
+			reporter.setAppendExisting(true);
 			report = new ExtentReports();
 			report.attachReporter(reporter);
 		}
@@ -91,8 +94,8 @@ public class TC_EditProfile extends BaseClass{
 	public void tearDownAfterClass(ITestResult result) throws Exception {
 	if(result.getStatus()==ITestResult.FAILURE)
 	{
-	test.log(Status.FAIL, "Test Case Failed is" +result.getName());
-	test.log(Status.FAIL, "TestCase Failed due to"+result.getThrowable());
+	test.log(Status.FAIL, "Test Case Failed is " +result.getName());
+	test.log(Status.FAIL, "TestCase Failed due to "+result.getThrowable());
 	String ScrnShot = ScreenshotCustom.capture(result.getName());
 	test.addScreenCaptureFromPath(ScrnShot);
 	}
